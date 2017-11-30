@@ -3,14 +3,17 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import './firebase'
-import VueFire from 'vuefire'
-import firebase from 'firebase'
+import * as firebase from "firebase";
 
-// explicit installation required in module environments
-Vue.use(VueFire)
+firebase.initializeApp({
+  apiKey: "AIzaSyDzFWZDmj4qjUEBpo8hXbFBow5zWQy1tWU",
+  authDomain: "group-project-week-3.firebaseapp.com",
+  databaseURL: "https://group-project-week-3.firebaseio.com",
+  projectId: "group-project-week-3"
+});
 
 Vue.config.productionTip = false
+Vue.prototype.$database=firebase.database();
 
 /* eslint-disable no-new */
 new Vue({

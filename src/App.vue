@@ -10,13 +10,22 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto');
+
+html,body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #34495e;
+  background: radial-gradient(#7f8c8d,#34495e);
+  background: -o-radial-gradient(#7f8c8d,#34495e);
+  background: -moz-radial-gradient(#7f8c8d,#34495e);
+  background: -webkit-radial-gradient(#7f8c8d,#34495e);
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  height: 100%;
 }
 </style>

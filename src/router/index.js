@@ -1,15 +1,21 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import TicTacToe from '@/components/TicTacToe'
+import Vue from "vue";
+import Router from "vue-router";
+import IndexHome from "@/components/IndexHome";
+import Play from "@/components/Play";
 
 Vue.use(Router)
 
 export default new Router({
+  mode: "history",
   routes: [
     {
       path: '/',
-      name: 'TicTacToe',
-      component: TicTacToe
+      component: IndexHome
+    },
+    {
+      path: "/:id",
+      component: Play,
+      props: true
     }
   ]
 })
