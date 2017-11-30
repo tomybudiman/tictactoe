@@ -81,6 +81,13 @@ export default {
           this.tempBoard = ['','','','','','','','','']
           alert('O Win')
         }        
+
+
+        if(this.tempBoard.indexOf('') == -1 ){
+          this.tempBoard = ['','','','','','','','','']
+          alert('DRAW')
+        } 
+
         // this.tempBoard[index] = this.tic
         createGame.child(key).update({
           board : this.tempBoard
