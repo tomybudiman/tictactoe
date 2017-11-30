@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # tictactoe
 
 > Group Project Game
