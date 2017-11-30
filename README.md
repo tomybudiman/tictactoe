@@ -1,6 +1,7 @@
+<<<<<<< HEAD
 # tictactoe
 
-> Group Project
+> Group Project Game
 
 ## Build Setup
 
