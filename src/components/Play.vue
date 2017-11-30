@@ -170,6 +170,8 @@ export default{
   position: relative;
   .share-room-url {
     top: 50%;
+    width: 80%;
+    max-width: 350px;
     padding: 15px;
     position: absolute;
     border-radius: 5px;
