@@ -2,11 +2,26 @@
   <div class="input-name">
     <img src="../assets/tic-tac-toe.png" alt="Icon">
     <span>Tic Tac Toe</span>
-    <router-link to="/play" class="btn btn-primary">Start Game</router-link>
+    <router-link :to="getURL" class="btn btn-primary">Start Game</router-link>
   </div>
 </template>
 <script>
-export default {}
+export default {
+  data(){
+    return{
+      getURL:""
+    }
+  },
+  created(){
+    this.createRoomURL();
+  },
+  methods:{
+    createRoomURL(){
+      const newkey=this.$database.ref().push().key;
+      this.getURL=`/${newkey}`;
+    }
+  }
+}
 </script>
 <style lang="scss">
 .input-name {

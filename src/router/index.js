@@ -13,8 +13,9 @@ export default new Router({
       component: IndexHome
     },
     {
-      path: "/play",
-      component: Play
+      path: "/:id",
+      component: Play,
+      props: true
     }
   ]
 })
