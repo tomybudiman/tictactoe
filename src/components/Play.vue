@@ -42,7 +42,8 @@ export default{
     return{
       type:"X",
       roomId:this.id,
-      board:["","","","","","","","",""]
+      board:["","","","","","","","",""],
+      checkBoard : []
     }
   },
   created(){
@@ -82,8 +83,32 @@ export default{
       }.bind(this));
     },
     clickBoard(index){ // Click on board box
+      if(this.board[index] != ''){
+        alert('Already Mark')
+      }
       if(this.board[index] == "" || this.board[index] == null){
         this.board.splice(index,1,this.type);
+
+        this.checkBoard = [`${this.board[0]+this.board[1]+this.board[2]},${this.board[0]+this.board[3]+this.board[6]},${this.board[0]+this.board[4]+this.board[8]},${this.board[2]+this.board[4]+this.board[6]},${this.board[2]+this.board[5]+this.board[8]},${this.board[3]+this.board[4]+this.board[5]},${this.board[6]+this.board[7]+this.board[8]},${this.board[1]+this.board[4]+this.board[7]}`]
+
+        if(this.checkBoard[0].indexOf('XXX') != -1 ){
+          console.log(this.checkBoard)
+          this.Xchecker = true;
+          this.board = ['','','','','','','','','']
+          alert('X Win')
+        }
+        if(this.checkBoard[0].indexOf('OOO') != -1 ){
+          this.Xchecker = true;
+          console.log(this.checkBoard)
+          this.board = ['','','','','','','','','']
+          alert('O Win')
+        }
+
+        if(this.board.indexOf('') == -1 ){
+          this.board = ['','','','','','','','','']
+          alert('DRAW')
+        }
+
         this.$database.ref(this.roomId).set({
           board:this.board,
           users:[
