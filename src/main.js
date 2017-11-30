@@ -3,6 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import './firebase'
+import VueFire from 'vuefire'
+import firebase from 'firebase'
+
+// explicit installation required in module environments
+Vue.use(VueFire)
 
 Vue.config.productionTip = false
 
